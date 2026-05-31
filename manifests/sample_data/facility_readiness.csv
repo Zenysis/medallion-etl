@@ -1,0 +1,16 @@
+facility_name,district,has_isolation_unit,has_ppe_stock,trained_staff,last_drill_date,notes
+Bandiro General Hospital,Bandiro,true,true,18,2026-02-10,Primary regional referral
+Bandiro East Clinic,Bandiro,false,true,6,2026-03-04,Limited isolation capacity
+Tanjira District Hospital,Tanjira,true,true,12,2026-01-22,Drill conducted with MoH
+Mwasini Central Hospital,Mwasini,true,true,32,2026-04-01,Designated treatment centre
+Mwasini South Health Post,Mwasini,false,false,3,,Awaiting PPE shipment
+Kotari Mission Clinic,Kotari,false,true,4,2026-02-28,Faith-based NGO supported
+Dombe District Hospital,Dombe,true,true,15,2026-03-15,Recent staff turnover
+Sakuli Clinic,Sakuli,false,true,5,2026-03-30,Border-adjacent
+Ireti Regional Hospital,Ireti,true,true,24,2026-04-12,
+Halumba Teaching Hospital,Halumba,true,true,40,2026-02-18,Teaching site for fellows
+Geredi Clinic,Geredi,false,false,4,,Stockout reported
+Onsuru Border Clinic,Onsuru,false,true,3,2026-01-08,Border surveillance site
+Kibanda Port Hospital,Kibanda,true,true,28,2026-03-22,Port-of-entry screening
+Maziri Town Clinic,Maziri,false,true,7,2026-04-05,
+Pwaka Coastal Clinic,Pwaka,false,false,4,,Last drill > 12 months ago

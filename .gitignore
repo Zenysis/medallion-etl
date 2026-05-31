@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Virtualenvs
+.venv/
+venv/
+
+# Environment
+.env
+.env.local
+
+# dbt
+dbt_medallion/target/
+dbt_medallion/dbt_packages/
+dbt_medallion/logs/
+dbt_medallion/.user.yml
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store

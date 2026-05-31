@@ -1,0 +1,33 @@
+dbt_medallion:
+  target: silver
+  outputs:
+    silver:
+      type: duckdb
+      path: ":memory:"
+      extensions:
+        - httpfs
+        - parquet
+      settings:
+        s3_endpoint: "localhost:9000"
+        s3_access_key_id: "minioadmin"
+        s3_secret_access_key: "minioadmin"
+        s3_use_ssl: false
+        s3_url_style: "path"
+
+    gold:
+      type: duckdb
+      path: ":memory:"
+      extensions:
+        - httpfs
+        - parquet
+        - postgres_scanner
+      settings:
+        s3_endpoint: "localhost:9000"
+        s3_access_key_id: "minioadmin"
+        s3_secret_access_key: "minioadmin"
+        s3_use_ssl: false
+        s3_url_style: "path"
+      attach:
+        - path: "host=localhost port=5432 dbname=demo_gold user=postgres password=postgres"
+          type: postgres
+          alias: gold_db

@@ -1,0 +1,14 @@
+version: 2
+sources:
+  - name: silver
+    meta:
+      external_location: "s3://silver/karatu/{name}.parquet"
+    tables:
+      - name: region
+      - name: district
+      - name: facility
+      - name: patient_anonymized
+      - name: symptom
+      - name: case_report
+      - name: case_symptom
+      - name: facility_readiness

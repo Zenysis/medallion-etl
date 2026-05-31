@@ -1,0 +1,22 @@
+name: 'dbt_medallion'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_medallion'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_medallion:
+    silver:
+      +materialized: external
+      +enabled: "{{ target.name == 'silver' }}"
+    gold:
+      +materialized: table
+      +database: gold_db
+      +schema: public
+      +enabled: "{{ target.name == 'gold' }}"

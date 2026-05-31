@@ -1,0 +1,19 @@
+deployment: karatu
+
+defaults:
+  type: postgres
+  connection:
+    host: localhost
+    port: 5432
+    dbname: demo_source
+    user: postgres
+    password: postgres
+
+sources:
+  - { name: region, table: region }
+  - { name: district, table: district }
+  - { name: facility, table: facility }
+  - { name: patient, table: patient }
+  - { name: symptom, table: symptom }
+  - { name: case_report, table: case_report }
+  - { name: case_symptom, table: case_symptom }

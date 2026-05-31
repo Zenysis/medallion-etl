@@ -1,0 +1,26 @@
+version: 2
+sources:
+  - name: bronze
+    meta:
+      # Each ingest run writes one dated partition per table:
+      #   s3://bronze/karatu/<YYYY-MM-DD>/<table>.parquet
+      # This expression reads each table's LATEST partition automatically.
+      # dbt-duckdb treats an external_location containing "(" as a SQL
+      # relation expression and uses it verbatim as the FROM target, so the
+      # {name} placeholder (filled per-table) lets one definition cover all
+      # tables. ISO dates sort chronologically, so MAX() = newest.
+      external_location: >-
+        (SELECT * EXCLUDE(filename)
+         FROM read_parquet('s3://bronze/karatu/*/{name}.parquet', filename=true)
+         WHERE string_split(filename, '/')[-2] = (
+           SELECT max(string_split(filename, '/')[-2])
+           FROM read_parquet('s3://bronze/karatu/*/{name}.parquet', filename=true)))
+    tables:
+      - name: region
+      - name: district
+      - name: facility
+      - name: patient
+      - name: symptom
+      - name: case_report
+      - name: case_symptom
+      - name: facility_readiness

@@ -1,0 +1,9 @@
+deployment: karatu
+
+sources:
+  - name: facility_readiness
+    type: csv
+    path: manifests/sample_data/facility_readiness.csv
+    options:
+      header: true
+      auto_detect: true
