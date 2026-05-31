@@ -1,4 +1,4 @@
-# Medallion ETL
+# Medallion ETL Demo
 
 A runnable medallion-architecture pipeline that keeps the heavy layers
 (bronze + silver) as Parquet in MinIO and only the curated gold layer in
